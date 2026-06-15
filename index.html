@@ -8,7 +8,13 @@
 </head>
 <body>
     <h1>Etch-a-Sketch</h1>
-    <div class="grid-container"></div>
+    <div class="game-container">
+        <div class="controls">
+            <p id="sketchSizeText"></p>
+            <input type="range" id="sketchSize" min="0" max="100" value="16">
+        </div>
+        <div class="grid-container"></div>
+    </div>
 </body>
 <script src="./javascript.js"></script>
 </html>
