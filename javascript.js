@@ -1,23 +1,17 @@
 
-const grid = 16;
+const grid = 32;
 const gridContainer = document.getElementsByClassName("grid-container")[0]
 
-for (let y = 0; y < grid; y++) {
-    const row = document.createElement("div");
-    row.style.display = "flex";
+gridContainer.style.gridTemplateColumns = `repeat(${grid}, 1fr)`;
+gridContainer.style.gridTemplateRows = `repeat(${grid}, 1fr)`;
 
-    for (let x = 0; x < grid; x++) {
-        const cell = document.createElement("div");
+for (let i = 0; i < grid * grid; i++) {
+    const cell = document.createElement("div");
 
-        cell.classList.add("cell");
-        cell.style.width = "40px";
-        cell.style.height = "40px";
-        cell.style.border = "1px solid black";
-        cell.addEventListener("mouseover", () => {
-            cell.style.backgroundColor = "#0000ff";
-        })
-        row.appendChild(cell);
-    }
+    cell.style.border = "1px solid black";
+    cell.addEventListener("mouseover", () => {
+        cell.style.backgroundColor = "#0000ff";
+    });
 
-    gridContainer.appendChild(row);
+    gridContainer.appendChild(cell);
 }
